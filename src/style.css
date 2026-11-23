@@ -1,0 +1,78 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #30231b;
+  background: #f8f4eb;
+  font-synthesis: none;
+  --accent: #864522;
+  --line: #e6dbcc;
+  --muted: #69584a;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+.shell { width: min(1120px, calc(100% - 48px)); margin: auto; }
+.site-header { background: #fffdf8; border-bottom: 1px solid var(--line); }
+.header-inner, .heading, .toolbar, .demo { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.header-inner, .heading, .demo { justify-content: space-between; }
+.header-inner { min-height: 80px; }
+.brand { display: flex; align-items: center; gap: 12px; font: bold 23px Georgia, serif; }
+.brand-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 13px; background: var(--accent); color: white; }
+.brand small { display: block; font: 13px system-ui, sans-serif; color: var(--muted); }
+nav { display: flex; gap: 6px; }
+nav button, .text-button { background: transparent; border-color: transparent; }
+nav button[aria-current] { background: #f1e4d5; color: #713b20; }
+main { padding-block: 34px 60px; }
+.heading { margin-bottom: 24px; }
+.date { color: var(--muted); margin: 0 0 6px; }
+.date:first-letter { text-transform: uppercase; }
+h1 { font: bold clamp(32px, 5vw, 52px)/1.1 Georgia, serif; margin: 0; }
+h2 { font: bold 24px Georgia, serif; margin: 0; }
+.demo, .notice { margin: 0 0 18px; border-radius: 12px; padding: 7px 16px; background: #efe6d7; }
+.notice { padding: 12px 16px; background: #e8f0e5; }
+.notice.error { background: #f9e4df; color: #812c1e; }
+.text-button { text-decoration: underline; }
+.metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 20px; }
+.metric, .panel { border: 1px solid var(--line); border-radius: 16px; background: #fffdf8; }
+.metric { display: grid; gap: 8px; padding: 18px; }
+.metric span, .form-help, .empty { color: var(--muted); }
+.metric strong { font-size: clamp(22px, 4vw, 34px); font-variant-numeric: tabular-nums; }
+.panel { margin-bottom: 18px; }
+.toolbar, .empty { padding: 16px 20px; }
+.toolbar h2 { margin-right: auto; }
+button, input, select { font: inherit; min-height: 46px; border: 1px solid #cdbdab; border-radius: 9px; color: inherit; background: #fffdf8; padding: 8px 12px; }
+button { font-weight: 650; cursor: pointer; }
+button:hover { background: #efe5d8; }
+.primary { background: var(--accent); color: white; border-color: var(--accent); }
+.primary:hover { background: #703719; }
+:focus-visible { outline: 3px solid #a35229; outline-offset: 2px; }
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; text-align: left; font-variant-numeric: tabular-nums; }
+th, td { border-top: 1px solid var(--line); padding: 12px 16px; white-space: nowrap; }
+thead th { background: #f5eee3; color: var(--muted); font-size: 14px; }
+.number { font-weight: 700; }
+.badge { border-radius: 999px; background: #e8f0e5; color: #315635; padding: 5px 9px; font-size: 13px; font-weight: 650; }
+.badge.low { background: #f7e6d2; color: #7e3e15; }
+.inline-form { display: flex; align-items: end; flex-wrap: wrap; gap: 12px; padding: 16px 20px; background: #f5eee3; }
+.inline-form strong { align-self: center; }
+label { display: grid; gap: 5px; font-weight: 600; }
+.inline-form input { width: min(100%, 190px); }
+.mode { border: 0; margin: 16px 20px 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.mode legend { padding: 0 0 8px; font-weight: 700; }
+.mode label { display: flex; align-items: center; gap: 8px; border: 1px solid var(--line); padding: 0 12px; border-radius: 9px; cursor: pointer; }
+.mode label:has(:checked) { background: #f1e4d5; }
+.mode input { accent-color: var(--accent); }
+.form-help { margin: 12px 20px 16px; }
+.quantity { width: 95px; }
+.sales-footer { justify-content: space-between; border-top: 1px solid var(--line); }
+.sales-footer strong { margin-left: 6px; }
+.report-date { margin-bottom: 16px; }
+.report-date label { display: inline-grid; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+@media (max-width: 600px) {
+  .shell { width: calc(100% - 24px); }
+  .header-inner { padding-block: 10px; gap: 8px; }
+  .metrics { gap: 6px; }
+  .metric { padding: 10px; }
+  .metric span { font-size: 12px; }
+  th, td { padding-inline: 10px; }
+  .toolbar { padding-inline: 12px; }
+}
